@@ -118,7 +118,7 @@ function run(game, prevTime) {
   let round = game.rounds[0];
 
   let time = Date.now();
-  let gameTimeLeft = 60000 - time + round.start;
+  let gameTimeLeft = 90000 - time + round.start;
   let delta = time - prevTime;
 
   $('.time-value').text(`${Math.round(gameTimeLeft / 1000)} segundos`);
@@ -134,7 +134,7 @@ function run(game, prevTime) {
   game.elements.renderer.render(game.elements.scene, game.elements.camera);
 
   requestAnimationFrame(function() {
-    if (gameTimeLeft > 0) {
+    if (gameTimeLeft > 0 && round.life > 0) {
       run(game, time);
     } else {
       let highScore = Math.round(
@@ -169,7 +169,7 @@ $(document).ready(() => {
     $('.info').show();
 
     let round = {
-      life: 1000,
+      life: 300,
       score: 0,
       start: Date.now()
     };
