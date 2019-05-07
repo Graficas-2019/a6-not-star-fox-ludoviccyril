@@ -10,8 +10,8 @@ function updateObstaclesAndEnemies(obstacleModel, enemyModel, ship, lasers) {
       let newObstacle = cloneFbx(obstacleModel);
       newObstacle.position.set(
         500,
-        Math.random() * 50 - 25,
-        Math.random() * 50 - 25
+        Math.random() * 40 - 20,
+        Math.random() * 40 - 20
       );
       newObstacle.scale.set(0.01, 0.01, 0.01);
       newObstacle.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
@@ -23,8 +23,8 @@ function updateObstaclesAndEnemies(obstacleModel, enemyModel, ship, lasers) {
       let newEnemy = cloneFbx(enemyModel);
       newEnemy.position.set(
         500,
-        Math.random() * 50 - 25,
-        Math.random() * 50 - 25
+        Math.random() * 40 - 20,
+        Math.random() * 40 - 20
       );
       newEnemy.rotation.set(0, Math.PI / 2, 0);
       newEnemy.box = new THREE.Box3();
@@ -61,16 +61,16 @@ function updateEnemy(ship, lasers, game, delta) {
 }
 
 function updatePlayer(game, delta) {
-  if (game.controls.up && this.position.y < 25) {
+  if (game.controls.up && this.position.y < 20) {
     this.position.y += 0.01 * delta;
   }
-  if (game.controls.down && this.position.y > -25) {
+  if (game.controls.down && this.position.y > -20) {
     this.position.y -= 0.01 * delta;
   }
-  if (game.controls.left && this.position.z > -25) {
+  if (game.controls.left && this.position.z > -20) {
     this.position.z -= 0.01 * delta;
   }
-  if (game.controls.right && this.position.z < 25) {
+  if (game.controls.right && this.position.z < 20) {
     this.position.z += 0.01 * delta;
   }
 }

@@ -118,7 +118,7 @@ function run(game, prevTime) {
   let round = game.rounds[0];
 
   let time = Date.now();
-  let gameTimeLeft = 300000 - time + round.start;
+  let gameTimeLeft = 60000 - time + round.start;
   let delta = time - prevTime;
 
   $('.time-value').text(`${Math.round(gameTimeLeft / 1000)} segundos`);
@@ -139,7 +139,7 @@ function run(game, prevTime) {
     } else {
       let highScore = Math.round(
         Math.max(
-          ...game.map(el => {
+          ...game.rounds.map(el => {
             return el.score;
           })
         )
