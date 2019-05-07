@@ -1,0 +1,19 @@
+{
+  "extends": "tenatek",
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "es6": true
+  },
+  "globals": {
+    "THREE": true,
+    "cloneFbx": true,
+    "updatePlayer": true,
+    "updateObstaclesAndEnemies": true,
+    "updateLasers": true,
+    "updateShip": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  }
+}
